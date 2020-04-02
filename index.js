@@ -1,9 +1,11 @@
 const calculateSubTotals = (items) => items.map(updateTotal)
 
 const updateTotal = (item) => {
-  item.total = parseFloat((item.price * item.quantity * (1 - item.discount)).toFixed(2))
+  const returnItem = item
 
-  return item
+  returnItem.total = parseFloat((item.price * item.quantity * (1 - item.discount)).toFixed(2))
+
+  return returnItem
 }
 
 module.exports = calculateSubTotals
